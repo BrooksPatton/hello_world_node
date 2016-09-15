@@ -6,12 +6,15 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   Todo.getAll().then((data) => {
+    console.log(data);
     res.render('index', { todos: data });
   });
 });
 
 router.post('/todos', (req, res, next) => {
-  Todo.insert(req.body).then(() => res.redirect('/'))
+  Todo.insert(req.body).then((response) => {
+    res.redirect('/')
+  })
 })
 
 module.exports = router;

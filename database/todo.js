@@ -7,7 +7,7 @@ function insert(data) {
 }
 
 function getAll() {
-  return Todo.find()
+  return Todo.find({})
 }
 
 module.exports = {

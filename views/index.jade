@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  form(action='/todos', method='post')
+    div
+      label(for='add-todo') Add Todo
+      input(type='text', name='todo')
+    div
+      input(type='submit', value='submit')#add-todo
+
+  div
+    h1 todos
+    ul
+      for todo in todos
+        li= todo.todo
