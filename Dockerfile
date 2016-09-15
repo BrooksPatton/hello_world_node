@@ -4,3 +4,4 @@ CMD /bin/bash
 EXPOSE 3000
 VOLUME /data
 WORKDIR /data
+ENV DATABASE_URL=mongo_demo/tododb
