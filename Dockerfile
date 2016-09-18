@@ -1,4 +1,4 @@
-FROM node:0.10
+FROM node:6.6.0
 MAINTAINER Brooks Patton
 CMD /bin/bash
 ENV DATABASE_URL "mongo_demo/tododb"
