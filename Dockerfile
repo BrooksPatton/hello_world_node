@@ -1,7 +1,11 @@
-FROM node:6.6.0
-MAINTAINER Brooks Patton
-CMD /bin/bash
-ENV DATABASE_URL "mongo_hello_world/tododb"
+FROM node:latest
+RUN useradd -m web
+USER web
+WORKDIR /home/web
+RUN git clone https://github.com/BrooksPatton/hello_world_node.git
+WORKDIR /home/web/hello_world_node
+RUN npm install
 EXPOSE 3000
-VOLUME /data
-WORKDIR /data
+ENV DATABASE_URL=db
+CMD ["npm", "start"]
+
